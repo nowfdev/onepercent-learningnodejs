@@ -8,7 +8,8 @@ const port = 3000;
 
 app.use(express.static(path.join(__dirname, "public")));
 // HTTP logger
-app.use(morgan("combined"));
+
+// app.use(morgan("combined"));
 
 // Template engine
 app.engine(
@@ -22,6 +23,11 @@ app.set("views", path.join(__dirname, "resource/views"));
 
 app.get("/", (req, res) => {
   res.render("home");
+});
+
+app.get("/search", (req, res) => {
+  console.log(req.query.q);
+  res.render("search");
 });
 
 app.get("/news", (req, res) => {
