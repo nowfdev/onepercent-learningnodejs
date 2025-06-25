@@ -1,11 +1,24 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const slugify = require("slugify");
+const { nanoid } = require("nanoid");
 
-const Course = new Schema({
-  name: { type: String, maxLength: 255, default: "Tran Van Nguyen Hao" },
-  description: { type: String, maxLength: 255 },
-  createdAt: { type: Date, default: Date.now },
-  updatedAt: { type: Date, default: Date.now },
+const Course = new mongoose.Schema(
+  {
+    name: { type: String, required: true },
+    description: { type: String, maxLength: 255 },
+    videoId: { type: String, maxLength: 255 },
+    slug: { type: String, unique: true },
+  },
+  { timestamps: true }
+);
+
+Course.pre("save", function (next) {
+  if (!this.slug) {
+    const baseSlug = slugify(this.name, { lower: true, strict: true });
+    const uniqueId = nanoid(6); // e.g., '3f72dX'
+    this.slug = `${baseSlug}-${uniqueId}`;
+  }
+  next();
 });
 
 module.exports = mongoose.model("Course", Course);

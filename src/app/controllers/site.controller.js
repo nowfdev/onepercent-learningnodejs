@@ -16,20 +16,5 @@ class SiteController {
     res.render("search");
   }
 }
-// Again
-// Again keychain
-// Again keychain
-module.exports = new SiteController();
-// Again
-// Again keychain
-// Again keychain
-// Again
-// Again keychain
-// Again keychain
 
-// Again
-// Again keychain
-// Again keychain
-// Again
-// Again keychain
-// Again keychain
+module.exports = new SiteController();
