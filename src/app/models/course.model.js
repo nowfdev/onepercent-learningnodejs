@@ -21,4 +21,6 @@ Course.pre("save", function (next) {
   next();
 });
 
+// Start from zero
+
 module.exports = mongoose.model("Course", Course);
