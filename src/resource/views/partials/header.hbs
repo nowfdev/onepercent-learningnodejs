@@ -1,21 +1,32 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
+  <div class="container">
     <a class="navbar-brand" href="/">#learningwithnowf</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="/courses/create">Create</a>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="https://i.pravatar.cc/150?img=3"
+              alt=""
+              class="user-avatar"
+            />
+            Its Nowf
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/courses/create">Create</a>
+            <hr class="dropdown-divider" />
+            <a class="dropdown-item" href="/me/stored/courses">My Courses</a>
+            <a class="dropdown-item" href="/me/stored/news">My Post</a>
+            <hr class="dropdown-divider" />
+            <a class="dropdown-item" href="#">Logout</a>
+          </div>
         </li>
       </ul>
     </div>
